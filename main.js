@@ -51,6 +51,7 @@ class Deck {
   }
 
 }
+const deck = new Deck(); //<- this needs to be in the game constructors
 
 class Player {
   constructor({name, cards}={}){
@@ -63,6 +64,17 @@ class Game {
 
   }
 }
+const Player1 = new Player()
+const Player2 = new Player()
 
-
-const deck = new Deck(); //<- this needs to be in the game constructor
+play = function (p1, p2) {
+//if else to check if each player has cards
+    if (Player1.hand.splice(0, 1) > Player2.hand.splice(0, 1)) {
+        let Player2card = Player2.hand.shift()
+        return Player1.hand.push()
+    } else {
+        let Player1card = Player1.hand.shift()
+        return Player2.hand.push()
+    }
+}
+play();
