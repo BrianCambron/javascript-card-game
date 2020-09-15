@@ -102,9 +102,6 @@ class Game {
         player2.hand.push(player2Card);
       } else if (player1.hand.slice(0, 1)[0].value === player2.hand.slice(0, 1)[0].value) { //WAR
 
-        // if(player1.hand.length >= 3 && player2.hand.length >= 3){
-        //
-        // }
 
         let player1Card = player1.hand.shift();
         let player2Card = player2.hand.shift();
@@ -114,6 +111,15 @@ class Game {
         rewards.push(player2Card);
 
         while (player1Card.value === player2Card.value) {
+
+
+          if(player1.hand.length < 2 || player2.hand.length < 2){
+            console.log('not enough cards');
+            return;
+          }
+
+
+
           let faceDown1 = player1.hand.shift();
           let faceDown2 = player2.hand.shift();
 
